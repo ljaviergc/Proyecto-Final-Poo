@@ -23,8 +23,9 @@ public class Menu extends javax.swing.JFrame {
         MenuUsuario = new javax.swing.JMenuItem();
         AyudaMenu = new javax.swing.JMenuItem();
         SalirMenu = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        menuListaMascotas = new javax.swing.JMenuItem();
+        Busqueda = new javax.swing.JMenu();
+        MenuBuscar = new javax.swing.JMenuItem();
+        AgregarMascota = new javax.swing.JMenuItem();
         Adopciones = new javax.swing.JMenu();
         NuevaAdopcion = new javax.swing.JMenuItem();
         ListaAdopciones = new javax.swing.JMenuItem();
@@ -42,8 +43,6 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        VentanaPrincipal.setBackground(new java.awt.Color(51, 255, 153));
-
         javax.swing.GroupLayout VentanaPrincipalLayout = new javax.swing.GroupLayout(VentanaPrincipal);
         VentanaPrincipal.setLayout(VentanaPrincipalLayout);
         VentanaPrincipalLayout.setHorizontalGroup(
@@ -58,7 +57,6 @@ public class Menu extends javax.swing.JFrame {
         Ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
         Ayuda.setText("Menu");
 
-        MenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/account.png"))); // NOI18N
         MenuCliente.setText("Cliente");
         MenuCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +65,6 @@ public class Menu extends javax.swing.JFrame {
         });
         Ayuda.add(MenuCliente);
 
-        MenuUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/briefcase-account.png"))); // NOI18N
         MenuUsuario.setText("Usuario");
         MenuUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,18 +93,28 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(Ayuda);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dog.png"))); // NOI18N
-        jMenu1.setText("Mascotas");
+        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dog.png"))); // NOI18N
+        Busqueda.setText("Mascotas");
 
-        menuListaMascotas.setText("Lista de Mascotas");
-        menuListaMascotas.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/magnify.png"))); // NOI18N
+        MenuBuscar.setText("Buscar ");
+        MenuBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuListaMascotasActionPerformed(evt);
+                MenuBuscarActionPerformed(evt);
             }
         });
-        jMenu1.add(menuListaMascotas);
+        Busqueda.add(MenuBuscar);
 
-        jMenuBar1.add(jMenu1);
+        AgregarMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plus-circle.png"))); // NOI18N
+        AgregarMascota.setText("Agregar");
+        AgregarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarMascotaActionPerformed(evt);
+            }
+        });
+        Busqueda.add(AgregarMascota);
+
+        jMenuBar1.add(Busqueda);
 
         Adopciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/archive.png"))); // NOI18N
         Adopciones.setText("Adopcion");
@@ -123,11 +130,6 @@ public class Menu extends javax.swing.JFrame {
 
         ListaAdopciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/format-list-bulleted.png"))); // NOI18N
         ListaAdopciones.setText("Lista de Adopciones");
-        ListaAdopciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ListaAdopcionesActionPerformed(evt);
-            }
-        });
         Adopciones.add(ListaAdopciones);
 
         jMenuBar1.add(Adopciones);
@@ -161,6 +163,16 @@ public class Menu extends javax.swing.JFrame {
         // TODO agregar codigo
     }//GEN-LAST:event_AyudaMenuActionPerformed
 
+    private void MenuBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarActionPerformed
+        Busqueda bf = new Busqueda();
+        CentrarVentana(bf);
+    }//GEN-LAST:event_MenuBuscarActionPerformed
+
+    private void AgregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMascotaActionPerformed
+        AgregarMascotaForm amf = new AgregarMascotaForm();
+        CentrarVentana(amf);
+    }//GEN-LAST:event_AgregarMascotaActionPerformed
+
     private void MenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuClienteActionPerformed
         ClienteForm cf = new ClienteForm();
         CentrarVentana(cf);
@@ -170,16 +182,6 @@ public class Menu extends javax.swing.JFrame {
         UsuarioForm uf = new UsuarioForm();
         CentrarVentana(uf);
     }//GEN-LAST:event_MenuUsuarioActionPerformed
-
-    private void ListaAdopcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaAdopcionesActionPerformed
-        ListaAdopcionesForm laf = new ListaAdopcionesForm();
-        CentrarVentana(laf);
-    }//GEN-LAST:event_ListaAdopcionesActionPerformed
-
-    private void menuListaMascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListaMascotasActionPerformed
-        MascotaForm maf = new MascotaForm();
-        CentrarVentana(maf);
-    }//GEN-LAST:event_menuListaMascotasActionPerformed
 
     //TODO Agregar el InternalFrame de la mascota! 
     /*
@@ -232,17 +234,18 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Adopciones;
+    private javax.swing.JMenuItem AgregarMascota;
     private javax.swing.JMenu Ayuda;
     private javax.swing.JMenuItem AyudaMenu;
+    private javax.swing.JMenu Busqueda;
     private javax.swing.JMenuItem ListaAdopciones;
+    private javax.swing.JMenuItem MenuBuscar;
     private javax.swing.JMenuItem MenuCliente;
     private javax.swing.JMenuItem MenuUsuario;
     private javax.swing.JMenuItem NuevaAdopcion;
     private javax.swing.JMenuItem SalirMenu;
     private javax.swing.JDesktopPane VentanaPrincipal;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem menuListaMascotas;
     // End of variables declaration//GEN-END:variables
 }

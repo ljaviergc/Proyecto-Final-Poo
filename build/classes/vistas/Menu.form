@@ -29,9 +29,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="MenuCliente">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/account.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
               <Events>
@@ -40,9 +37,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="MenuUsuario">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/briefcase-account.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
               <Events>
@@ -73,7 +67,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="Busqueda">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img/dog.png"/>
@@ -81,12 +75,26 @@
             <Property name="text" type="java.lang.String" value="Mascotas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menuListaMascotas">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuBuscar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Lista de Mascotas"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img/magnify.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buscar "/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuListaMascotasActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuBuscarActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="AgregarMascota">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img/plus-circle.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Agregar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarMascotaActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -117,9 +125,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Lista de Adopciones"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ListaAdopcionesActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -160,11 +165,6 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="VentanaPrincipal">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="ff" red="33" type="rgb"/>
-        </Property>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
