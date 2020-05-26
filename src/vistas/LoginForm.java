@@ -3,11 +3,11 @@ package vistas;
 
 import javax.swing.JOptionPane;
 import modelo.EntidadUsuario;
-import modelo.UsuarioDAO;
+import modelo.AccesoDAO;
 
 public class LoginForm extends javax.swing.JFrame {
 
-    UsuarioDAO udao = new UsuarioDAO();
+    AccesoDAO adao = new AccesoDAO();
     EntidadUsuario eu = new EntidadUsuario();
     
     public LoginForm() {
@@ -90,8 +90,8 @@ public class LoginForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         validar();
         // TODO Arreglar el Login
-        Menu m = new Menu() ;
-                m.setVisible(true);
+        MainWindow mw = new MainWindow() ;
+                mw.setVisible(true);
                 dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -105,7 +105,7 @@ public class LoginForm extends javax.swing.JFrame {
             txtUser.requestFocus();
         }
         else{
-            eu = udao.ValidarUsuario(dni, user);
+            eu = adao.ValidarUsuario(dni, user);
             if(eu.getUser != null && eu.getDni != null){
                 JOptionPane.showMessageDialog(this, "Entro");
                 

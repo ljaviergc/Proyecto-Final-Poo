@@ -1,4 +1,4 @@
-
+//IMPORTANTE: Esta clase es la que realiza los movimientos en la Base de Datos
 package modelo;
 
 import java.sql.Connection;

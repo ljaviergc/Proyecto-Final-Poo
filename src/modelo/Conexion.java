@@ -1,4 +1,4 @@
-
+//IMPORTANTE: Esta clase es la conexión a la base de datos.
 package modelo;
 
 import java.sql.Connection;

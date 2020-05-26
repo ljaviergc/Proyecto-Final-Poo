@@ -1,4 +1,4 @@
-
+//IMPORTANTE: Esta clase funciona con las clases DAO
 package modelo;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-
+//IMPORTANTE: Esta clase es necesaria para manejar la Pestaña Principal/Clientes
 package modelo;
 
 public class Cliente {

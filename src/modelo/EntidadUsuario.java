@@ -1,3 +1,7 @@
+// IMPORTANTE: Esta clase funciona con el Login
+
+
+
 package modelo;
 
 public class EntidadUsuario {
